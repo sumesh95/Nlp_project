@@ -14,4 +14,15 @@ class DataIngestionConfig:
     ZIP_FILE_PATH: str = os.path.join(DATA_INGESTION_ARTIFACTS_DIR, ZIP_FILE_NAME)
     
     
-    
+@dataclass
+class DataTransformationConfig:
+
+    DATA_TRANSFORMATION_ARTIFACTS_DIR: str = os.path.join(os.getcwd(),ARTIFACTS_DIR,DATA_TRANSFORMATION_ARTIFACTS_DIR)
+    TRANSFORMED_FILE_PATH = os.path.join(DATA_TRANSFORMATION_ARTIFACTS_DIR,TRANSFORMED_FILE_NAME)
+    ID = ID
+    AXIS = AXIS
+    INPLACE = INPLACE 
+    DROP_COLUMNS = DROP_COLUMNS
+    CLASS = CLASS 
+    LABEL = LABEL
+    TWEET = TWEET
