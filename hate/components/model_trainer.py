@@ -6,11 +6,13 @@ from hate.logger import logging
 from hate.constants import *
 from hate.exception import CustomException
 from sklearn.model_selection import train_test_split
-from keras.preprocessing.text import Tokenizer # type: ignore
-from keras.utils import pad_sequences # type: ignore
+import tensorflow as tf
+from tensorflow.keras.preprocessing.text import Tokenizer 
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from hate.entity.config_entity import ModelTrainerConfig
 from hate.entity.artifact_entity import ModelTrainerArtifacts,DataTransformationArtifacts
 from hate.ml.model import ModelArchitecture
+
 
 
 class ModelTrainer:
