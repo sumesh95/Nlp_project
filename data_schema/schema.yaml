@@ -13,7 +13,7 @@ rawData:
     offensive_language: int64
     neither: int64
     class: int64
-    tweet: str
+    tweet: object
 
 imbalanceData:
   columns:
@@ -24,4 +24,4 @@ imbalanceData:
   dataTypes:
     id: int64
     label: int64
-    tweet: str
+    tweet: object

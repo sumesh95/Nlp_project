@@ -5,7 +5,7 @@ from hate.logger import logging
 from hate.exception import CustomException
 from hate.entity.artifact_entity import DataValidationArtifacts,DataIngestionArtifacts
 from hate.constants import *
-from utils import main_utils
+from hate.utils import main_utils
 
 
 class DataValidation:
@@ -24,7 +24,7 @@ class DataValidation:
              logging.error(CustomException(sys,e))
 
 
-    def validate_total_number_of_columns(dataframe:pd.DataFrame,schemaFile:list):
+    def validate_total_number_of_columns(self,dataframe:pd.DataFrame,schemaFile:list):
         
         try:
             if len(dataframe.columns)==len(schemaFile):
@@ -33,7 +33,7 @@ class DataValidation:
         except Exception as e:
             logging.error(CustomException(sys,e))
             
-    def validate_data_types(dataframe: pd.DataFrame, schemaFile) -> bool:
+    def validate_data_types(self,dataframe: pd.DataFrame, schemaFile) -> bool:
 
         try:
             schema_data_types = schemaFile["dataTypes"]  # Extract data types from schema
@@ -68,7 +68,7 @@ class DataValidation:
             
         except Exception as e:
             
-            logging.error(CustomException(sys,e))
+            logging.error(CustomException(e,sys))
         
         
         
