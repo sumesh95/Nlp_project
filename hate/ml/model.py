@@ -1,10 +1,10 @@
 # Creating model architecture.
 from hate.entity.config_entity import ModelTrainerConfig
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.optimizers import RMSprop
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from tensorflow.keras.layers import LSTM,Activation,Dense,Dropout,Input,Embedding,SpatialDropout1D
+from tensorflow.keras.models import Sequential # type: ignore
+from tensorflow.keras.optimizers import RMSprop # type: ignore
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint # type: ignore
+from tensorflow.keras.layers import LSTM,Activation,Dense,Dropout,Input,Embedding,SpatialDropout1D # type: ignore
 from hate.constants import *
 
 class ModelArchitecture:
