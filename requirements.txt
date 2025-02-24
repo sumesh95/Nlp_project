@@ -8,4 +8,5 @@ regex
 scikit-learn
 from-root
 google-cloud-storage
+pyaml
 # -e .

@@ -2,14 +2,16 @@ import sys
 from hate.logger import logging
 from hate.exception import CustomException
 from hate.components.data_ingestion import DataIngestion
+from hate.components.data_validation import DataValidation
 
 from hate.entity.config_entity import (DataIngestionConfig)
 
-from hate.entity.artifact_entity import (DataIngestionArtifacts)
+from hate.entity.artifact_entity import (DataIngestionArtifacts,DataValidationArtifacts)
 
 class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
+        
    
    
     def start_data_ingestion(self) -> DataIngestionArtifacts:
@@ -26,6 +28,15 @@ class TrainPipeline:
         except Exception as e:
             raise CustomException(e, sys)
         
+    def start_data_validation(self,data_ingestion_artifacts):
+        logging.info("Entered the start_data_validation method of TrainPipeline class")
+        try:
+           data_validation= DataValidation(data_ingestion_artifact=data_ingestion_artifacts)
+           data_validation.initiate_data_validation()
+           
+        except Exception as e:
+            raise CustomException(e, sys)
+        
         
         
     def run_pipeline(self):
@@ -33,6 +44,7 @@ class TrainPipeline:
         
         try:
             data_ingestion_artifacts = self.start_data_ingestion()
+            self.start_data_validation(data_ingestion_artifacts)
             
         except Exception as e:
             logging.error(CustomException(e,sys))
