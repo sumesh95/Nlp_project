@@ -26,3 +26,25 @@ class DataTransformationConfig:
     CLASS = CLASS 
     LABEL = LABEL
     TWEET = TWEET
+    
+    
+    
+@dataclass
+class ModelTrainerConfig: 
+   
+        TRAINED_MODEL_DIR: str = os.path.join(os.getcwd(),ARTIFACTS_DIR,MODEL_TRAINER_ARTIFACTS_DIR) 
+        TRAINED_MODEL_PATH = os.path.join(TRAINED_MODEL_DIR,TRAINED_MODEL_NAME)
+        X_TEST_DATA_PATH = os.path.join(TRAINED_MODEL_DIR, X_TEST_FILE_NAME)
+        Y_TEST_DATA_PATH = os.path.join(TRAINED_MODEL_DIR, Y_TEST_FILE_NAME)
+        X_TRAIN_DATA_PATH = os.path.join(TRAINED_MODEL_DIR, X_TRAIN_FILE_NAME)
+        MAX_WORDS = MAX_WORDS
+        MAX_LEN = MAX_LEN
+        LOSS = LOSS
+        METRICS = METRICS
+        ACTIVATION = ACTIVATION
+        LABEL = LABEL
+        TWEET = TWEET
+        RANDOM_STATE = RANDOM_STATE
+        EPOCH = EPOCH
+        BATCH_SIZE = BATCH_SIZE
+        VALIDATION_SPLIT = VALIDATION_SPLIT
