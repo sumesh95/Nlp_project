@@ -1,5 +1,5 @@
 import sys 
-import logging
+from hate.logger import logging
 
 def error_message_details(error,error_details:sys):
     _,_,exc_tb=error_details.exc_info()
@@ -8,7 +8,7 @@ def error_message_details(error,error_details:sys):
     return error_message
 
 
-class CustomeException(Exception):
+class CustomException(Exception):
     def __init__(self,error,error_details:sys):
         super().__init__(error)
         self.error_message=error_message_details(error,error_details)

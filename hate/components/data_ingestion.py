@@ -10,7 +10,7 @@ from hate.entity.artifact_entity import DataIngestionArtifacts
 class DataIngestion:
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         self.data_ingestion_config=data_ingestion_config
-        self.cloud=()
+        self.gcloud=GCloudSync()
         
     def get_data_from_gcloud(self):
         

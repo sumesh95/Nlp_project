@@ -24,7 +24,7 @@ class TrainPipeline:
             return data_ingestion_artifacts
 
         except Exception as e:
-            raise CustomException(e, sys) from e 
+            raise CustomException(e, sys)
         
         
         
