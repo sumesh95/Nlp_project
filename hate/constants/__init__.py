@@ -51,6 +51,7 @@ ACTIVATION = 'sigmoid'
 
 
 # Model  Evaluation constants
+MODEL_NAME="model.h5"
 MODEL_EVALUATION_ARTIFACTS_DIR = 'ModelEvaluationArtifacts'
 BEST_MODEL_DIR = "best_Model"
 MODEL_EVALUATION_FILE_NAME = 'loss.csv'
